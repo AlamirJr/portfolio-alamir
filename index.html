@@ -3,567 +3,727 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfólio — Alamir Rodrigues Rangel Júnior</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<title>PYTHOS — Software House</title>
+<meta name="description" content="Codamos soluções. Entregamos valor. Desenvolvimento Python sob medida para automação, sistemas administrativos e ferramentas pedagógicas.">
+
+<!-- ====================================================================
+  COMO EDITAR ESTE ARQUIVO
+  - Tudo está num único arquivo HTML (sem dependências externas, exceto
+    as fontes do Google, que exigem internet — ok para um site público).
+  - Para trocar o telefone/whatsapp: procure por "5522997932424" (3x).
+  - Para adicionar/remover um card de projeto: procure
+    "INÍCIO DOS CARDS DE PROJETO" mais abaixo e copie um bloco <article>.
+  - Para trocar textos: procure os comentários "EDITAR:" espalhados pelo
+    arquivo — eles marcam os pontos mais úteis de personalização.
+===================================================================== -->
+
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#0a0a0f;--surface:#111118;--surface2:#18181f;--border:#2a2a35;--border2:#35354a;--text:#f0f0f5;--muted:#8585a0;--faint:#3a3a50;--green:#22c55e;--green-dim:rgba(34,197,94,0.12);--blue:#60a5fa;--blue-dim:rgba(96,165,250,0.12);--purple:#a78bfa;--purple-dim:rgba(167,139,250,0.12)}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh}
-nav{position:sticky;top:0;z-index:100;padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,15,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
-.nav-brand{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:var(--text);letter-spacing:-.02em;display:flex;align-items:center;gap:.4rem}
-.nav-brand span{color:var(--green)}
-.nav-right{display:flex;align-items:center;gap:2rem}
-.nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{font-size:.82rem;font-weight:500;color:var(--muted);text-decoration:none;letter-spacing:.02em;text-transform:uppercase;transition:color .2s}
-.nav-links a:hover{color:var(--text)}
-.lang-switcher{display:flex;align-items:center;gap:0;border:1px solid var(--border2);border-radius:8px;overflow:hidden;flex-shrink:0}
-.lang-btn{padding:.3rem .7rem;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;border:none;background:transparent;color:var(--muted);transition:all .2s;font-family:'Inter',sans-serif}
-.lang-btn.active{background:var(--green);color:#0a0a0f}
-.lang-btn:not(.active):hover{color:var(--text)}
-section{position:relative;z-index:1}
-.container{max-width:1100px;margin:0 auto;padding:0 2rem}
-#hero{min-height:calc(100vh - 60px);display:flex;align-items:center;padding:5rem 0 6rem}
-.hero-inner{max-width:1100px;margin:0 auto;padding:0 2rem}
-.hero-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.35rem .9rem;border:1px solid rgba(34,197,94,.3);border-radius:20px;background:var(--green-dim);font-size:.72rem;font-weight:700;color:var(--green);letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.75rem}
-.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 2s ease-in-out infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-.hero-title{font-family:'Syne',sans-serif;font-size:clamp(2.4rem,5.5vw,4.2rem);font-weight:800;line-height:1.05;letter-spacing:-.04em;margin-bottom:1.25rem}
-.hero-title .accent{color:var(--green)}
-.hero-sub{font-size:1rem;color:var(--muted);max-width:540px;line-height:1.75;margin-bottom:2.5rem}
-.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
-.btn-primary{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.75rem;background:var(--green);color:#0a0a0f;font-weight:700;font-size:.88rem;border-radius:8px;text-decoration:none;transition:all .2s;cursor:pointer;border:none;font-family:'Inter',sans-serif}
-.btn-primary:hover{background:#16a34a;transform:translateY(-2px);box-shadow:0 8px 24px rgba(34,197,94,.3)}
-.btn-ghost{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.75rem;border:1px solid var(--border2);color:var(--muted);font-weight:500;font-size:.88rem;border-radius:8px;text-decoration:none;transition:all .2s;cursor:pointer;background:none;font-family:'Inter',sans-serif}
-.btn-ghost:hover{border-color:var(--green);color:var(--green)}
-.stats-row{display:flex;gap:3rem;margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border);flex-wrap:wrap}
-.stat-value{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;color:var(--green);line-height:1;letter-spacing:-.03em}
-.stat-label{font-size:.78rem;color:var(--muted);margin-top:4px}
-.section-label{font-size:.72rem;font-weight:700;color:var(--green);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
-.section-label::after{content:'';flex:1;height:1px;background:var(--border)}
-.section-title{font-family:'Syne',sans-serif;font-size:clamp(1.5rem,2.8vw,2.2rem);font-weight:800;letter-spacing:-.03em;margin-bottom:1rem}
-.section-desc{color:var(--muted);font-size:.95rem;max-width:520px;line-height:1.75;margin-bottom:3.5rem}
-#projects{padding:7rem 0}
-.projects-grid{display:grid;gap:1.5rem}
-.project-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:border-color .25s,transform .25s,box-shadow .25s}
-.project-card:hover{transform:translateY(-3px);box-shadow:0 20px 48px rgba(0,0,0,.4)}
-.project-card.green:hover{border-color:var(--green)}.project-card.blue:hover{border-color:var(--blue)}.project-card.purple:hover{border-color:var(--purple)}
-.card-top{display:grid;grid-template-columns:1fr auto;gap:2rem;padding:2rem 2rem 0;align-items:start}
-.card-number{font-size:.7rem;font-weight:700;letter-spacing:.1em;opacity:.6;margin-bottom:.5rem}
-.green .card-number{color:var(--green)}.blue .card-number{color:var(--blue)}.purple .card-number{color:var(--purple)}
-.card-icon{font-size:1.5rem;margin-bottom:1rem;width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.06)}
-.green .card-icon{background:var(--green-dim)}.blue .card-icon{background:var(--blue-dim)}.purple .card-icon{background:var(--purple-dim)}
-.card-title{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;letter-spacing:-.02em;margin-bottom:.4rem}
-.card-subtitle{font-size:.82rem;font-weight:500;margin-bottom:.75rem}
-.green .card-subtitle{color:var(--green)}.blue .card-subtitle{color:var(--blue)}.purple .card-subtitle{color:var(--purple)}
-.card-desc{font-size:.88rem;color:var(--muted);line-height:1.75;margin-bottom:1.5rem}
-.card-body{padding:0 2rem}
-.card-features{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:1.75rem}
-.feature-item{display:flex;align-items:flex-start;gap:.5rem;font-size:.8rem;color:var(--muted);line-height:1.4}
-.green .feature-item::before{content:'›';color:var(--green);font-weight:700;flex-shrink:0}
-.blue .feature-item::before{content:'›';color:var(--blue);font-weight:700;flex-shrink:0}
-.purple .feature-item::before{content:'›';color:var(--purple);font-weight:700;flex-shrink:0}
-.card-metrics{display:flex;gap:2rem;padding:1.25rem 2rem;border-top:1px solid var(--border)}
-.metric-value{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;line-height:1;letter-spacing:-.02em}
-.green .metric-value{color:var(--green)}.blue .metric-value{color:var(--blue)}.purple .metric-value{color:var(--purple)}
-.metric-label{font-size:.7rem;color:var(--faint);margin-top:3px}
-.card-stack{display:flex;flex-wrap:wrap;gap:.4rem;padding:1.25rem 2rem;border-top:1px solid var(--border);background:var(--surface2)}
-.tech-tag{display:inline-flex;align-items:center;padding:.2rem .6rem;border-radius:6px;font-size:.72rem;font-weight:600;border:1px solid var(--border);color:var(--muted);background:var(--bg)}
-.tech-tag.hl-green{border-color:var(--green);color:var(--green);background:var(--green-dim)}
-.tech-tag.hl-blue{border-color:var(--blue);color:var(--blue);background:var(--blue-dim)}
-.tech-tag.hl-purple{border-color:var(--purple);color:var(--purple);background:var(--purple-dim)}
-.card-status{display:inline-flex;align-items:center;gap:5px;padding:.25rem .7rem;border-radius:20px;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1px solid rgba(34,197,94,.3);background:var(--green-dim);color:var(--green)}
-.card-status::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--green)}
-#skills{padding:7rem 0;border-top:1px solid var(--border)}
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem}
-.skill-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.5rem;transition:border-color .2s}
-.skill-card:hover{border-color:var(--border2)}
-.skill-icon{font-size:1.5rem;margin-bottom:.875rem}
-.skill-name{font-weight:700;font-size:.95rem;margin-bottom:.35rem}
-.skill-desc{font-size:.78rem;color:var(--muted);line-height:1.65}
-#about{padding:7rem 0;border-top:1px solid var(--border)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
-.about-text{font-size:.93rem;color:var(--muted);line-height:1.8;margin-bottom:1.25rem}
-.about-right{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem}
-.detail-item{display:flex;align-items:center;gap:1rem;padding:.875rem 1rem;background:var(--surface2);border-radius:10px;border:1px solid var(--border);margin-bottom:.75rem}
-.detail-ico{width:36px;height:36px;border-radius:8px;background:var(--green-dim);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
-.detail-key{font-size:.7rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px}
-.detail-val{font-size:.88rem;font-weight:500;color:var(--text)}
-.detail-val a{color:var(--green);text-decoration:none}
-.detail-val a:hover{text-decoration:underline}
-#contact{padding:7rem 0;border-top:1px solid var(--border)}
-.contact-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:3.5rem;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;position:relative;overflow:hidden}
-.contact-card::before{content:'';position:absolute;top:-60px;right:-60px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(34,197,94,.05) 0%,transparent 70%);pointer-events:none}
-.contact-title{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;letter-spacing:-.03em;margin-bottom:.75rem}
-.contact-sub{color:var(--muted);font-size:.9rem;line-height:1.75;margin-bottom:1.75rem;max-width:440px}
-.contact-links{display:flex;gap:.75rem;flex-wrap:wrap}
-.contact-link{display:inline-flex;align-items:center;gap:.5rem;padding:.65rem 1.25rem;border:1px solid var(--border2);border-radius:8px;font-size:.85rem;font-weight:500;color:var(--muted);text-decoration:none;transition:all .2s;background:var(--surface2)}
-.contact-link:hover{border-color:var(--green);color:var(--green)}
-.contact-deco{font-size:6rem;opacity:.04;font-family:'Syne',sans-serif;font-weight:800;white-space:nowrap;line-height:1}
-footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-size:.78rem;color:var(--faint)}
-::-webkit-scrollbar{width:4px}::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
-@media(max-width:768px){.about-grid{grid-template-columns:1fr;gap:2.5rem}.contact-card{grid-template-columns:1fr}.contact-deco{display:none}.card-features{grid-template-columns:1fr}.card-top{grid-template-columns:1fr}.nav-links{display:none}}
+  /* ============== DESIGN TOKENS ============== */
+  :root{
+    --bg:        #07070a;
+    --bg-alt:    #0d0e13;
+    --bg-card:   #12131a;
+    --line:      #1f212b;
+
+    --blue:      #2f7fc1;
+    --blue-2:    #4aa3e0;
+    --yellow:    #ffd43b;
+    --yellow-2:  #e6b800;
+
+    --white:     #f4f6f8;
+    --muted:     #8b92a0;
+    --muted-2:   #555a66;
+
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body:    'Inter', sans-serif;
+    --font-mono:    'JetBrains Mono', monospace;
+
+    --maxw: 1120px;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+
+  body{
+    background:var(--bg);
+    color:var(--white);
+    font-family:var(--font-body);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{ color:inherit; text-decoration:none; }
+  img,svg{ display:block; max-width:100%; }
+
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* respeita usuários que preferem menos movimento */
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; }
+  }
+
+  :focus-visible{
+    outline:2px solid var(--yellow);
+    outline-offset:3px;
+  }
+
+  /* ============== DIVISOR ASSINATURA (faixa azul/amarela) ==============
+     Esse traço bicolor é o elemento de marca repetido pelo site —
+     substitui a tradicional linha de gradiente genérica. */
+  .split-rule{
+    height:3px;
+    width:64px;
+    display:flex;
+    overflow:hidden;
+    border-radius:2px;
+  }
+  .split-rule span{ flex:1; }
+  .split-rule span:first-child{ background:var(--blue-2); }
+  .split-rule span:last-child{ background:var(--yellow); }
+
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+  .eyebrow .accent{ color:var(--yellow); }
+
+  /* ============== HEADER ============== */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(7,7,10,.82);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+    transition:transform .3s ease;
+  }
+  @media (max-width:760px){
+    header.header-hidden{ transform:translateY(-100%); }
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 28px;
+    max-width:var(--maxw); margin:0 auto;
+  }
+  .brand{ display:flex; align-items:center; gap:10px; font-family:var(--font-display); font-weight:700; font-size:19px; letter-spacing:.01em; }
+  .brand .o{ color:var(--yellow); }
+  .nav-links{ display:flex; gap:32px; align-items:center; }
+  .nav-links a{
+    font-size:14.5px; color:var(--muted); font-weight:500;
+    transition:color .2s;
+  }
+  .nav-links a:hover{ color:var(--white); }
+  .nav-cta{
+    font-family:var(--font-mono);
+    font-size:13px;
+    color:var(--bg) !important;
+    background:var(--yellow);
+    padding:9px 16px;
+    border-radius:7px;
+    font-weight:500;
+    transition:transform .15s, box-shadow .15s;
+  }
+  .nav-cta:hover{ transform:translateY(-1px); box-shadow:0 6px 18px -6px rgba(255,212,59,.5); }
+  .nav-toggle{ display:none; background:none; border:none; color:var(--white); font-size:22px; cursor:pointer; }
+
+  @media (max-width:760px){
+    .nav-links{
+      position:fixed; inset:64px 0 0 0; background:var(--bg);
+      flex-direction:column; align-items:flex-start; padding:28px;
+      transform:translateY(-110%); transition:transform .25s ease;
+      border-bottom:1px solid var(--line);
+    }
+    .nav-links.open{ transform:translateY(0); }
+    .nav-links a{ font-size:18px; padding:10px 0; width:100%; border-bottom:1px solid var(--line); }
+    .nav-toggle{ display:block; }
+  }
+
+  /* ============== LOGO MARK (forma entrelaçada azul/amarelo) ============== */
+  .mark{ width:30px; height:30px; flex-shrink:0; }
+
+  /* ============== HERO ============== */
+  .hero{
+    position:relative;
+    padding:96px 0 88px;
+    overflow:hidden;
+  }
+  .hero::before{
+    /* glow ambiente sutil atrás do conteúdo, nas cores da marca */
+    content:"";
+    position:absolute; top:-180px; left:50%; transform:translateX(-50%);
+    width:900px; height:560px;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(47,127,193,.20), transparent 60%),
+      radial-gradient(circle at 70% 60%, rgba(255,212,59,.14), transparent 60%);
+    pointer-events:none;
+  }
+  .hero-grid{
+    position:relative;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:56px;
+    align-items:center;
+  }
+  @media (max-width:680px){
+    .hero-grid{ grid-template-columns:1fr; }
+  }
+  @media (max-width:880px){
+    .hero-grid{ gap:32px; }
+    .terminal-body{ font-size:12px; padding:18px 16px 22px; min-height:150px; }
+  }
+
+  .hero h1{
+    font-family:var(--font-display);
+    font-size:clamp(40px, 6vw, 64px);
+    font-weight:700;
+    line-height:1.04;
+    letter-spacing:-.01em;
+    margin:18px 0 20px;
+  }
+  .hero h1 .o{ color:var(--yellow); }
+
+  .hero p.lede{
+    font-size:17.5px;
+    color:var(--muted);
+    max-width:480px;
+    margin-bottom:32px;
+  }
+
+  .hero-actions{ display:flex; gap:14px; flex-wrap:wrap; }
+
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--font-body); font-weight:600; font-size:15px;
+    padding:13px 22px; border-radius:9px;
+    transition:transform .15s, box-shadow .15s, background .2s;
+    border:1px solid transparent;
+  }
+  .btn-primary{
+    background:linear-gradient(135deg, var(--yellow) 0%, var(--yellow-2) 100%);
+    color:#1a1500;
+  }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 10px 24px -8px rgba(255,212,59,.45); }
+  .btn-ghost{
+    border-color:var(--line);
+    color:var(--white);
+    background:rgba(255,255,255,.02);
+  }
+  .btn-ghost:hover{ border-color:var(--blue-2); background:rgba(47,127,193,.08); }
+
+  /* ---------- terminal (elemento de assinatura do hero) ---------- */
+  .terminal{
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    box-shadow:0 30px 60px -30px rgba(0,0,0,.7);
+    overflow:hidden;
+  }
+  .terminal-bar{
+    display:flex; align-items:center; gap:8px;
+    padding:12px 16px;
+    background:var(--bg-alt);
+    border-bottom:1px solid var(--line);
+  }
+  .terminal-dot{ width:10px; height:10px; border-radius:50%; }
+  .terminal-bar .terminal-dot:nth-child(1){ background:var(--blue-2); }
+  .terminal-bar .terminal-dot:nth-child(2){ background:var(--yellow); }
+  .terminal-bar .terminal-dot:nth-child(3){ background:var(--muted-2); }
+  .terminal-bar span{
+    margin-left:auto; font-family:var(--font-mono); font-size:11.5px; color:var(--muted-2);
+  }
+  .terminal-body{
+    font-family:var(--font-mono); font-size:13.5px;
+    padding:22px 20px 26px;
+    min-height:178px;
+    color:#cfe8f7;
+  }
+  .terminal-body .p1{ color:var(--blue-2); }
+  .terminal-body .p2{ color:var(--yellow); }
+  .terminal-body .out{ color:var(--muted); }
+  #typed-line{ white-space:pre-wrap; }
+  .cursor{
+    display:inline-block; width:8px; height:14px; background:var(--yellow);
+    margin-left:2px; vertical-align:-2px;
+    animation:blink 1s step-end infinite;
+  }
+  @keyframes blink{ 50%{ opacity:0; } }
+
+  /* ============== SEÇÕES GERAIS ============== */
+  section{ padding:88px 0; }
+  .section-head{ max-width:560px; margin-bottom:48px; }
+  .section-head h2{
+    font-family:var(--font-display);
+    font-size:clamp(28px,3.4vw,38px);
+    font-weight:700;
+    margin:14px 0 14px;
+    letter-spacing:-.01em;
+  }
+  .section-head p{ color:var(--muted); font-size:16px; }
+
+  #servicos{ background:var(--bg-alt); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+
+  /* ---------- grid de serviços ---------- */
+  .services-grid{
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:14px;
+    overflow:hidden;
+  }
+  @media (max-width:900px){ .services-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .services-grid{ grid-template-columns:1fr; } }
+
+  .service{
+    background:var(--bg-card);
+    padding:30px 24px;
+    transition:background .2s;
+  }
+  .service:hover{ background:#161821; }
+  .service .icon{ width:34px; height:34px; margin-bottom:18px; }
+  .service h3{ font-family:var(--font-display); font-size:17px; font-weight:600; margin-bottom:8px; }
+  .service p{ font-size:14px; color:var(--muted); }
+
+  /* ---------- portfólio / ferramentas ---------- */
+  .filter-row{ display:flex; gap:10px; margin-bottom:36px; flex-wrap:wrap; }
+  .filter-btn{
+    font-family:var(--font-mono); font-size:12.5px;
+    padding:8px 14px; border-radius:7px;
+    border:1px solid var(--line); color:var(--muted);
+    background:transparent; cursor:pointer; transition:.2s;
+  }
+  .filter-btn:hover{ border-color:var(--blue-2); color:var(--white); }
+  .filter-btn.active{ background:var(--blue); border-color:var(--blue); color:#fff; }
+
+  .projects-grid{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:22px;
+  }
+  @media (max-width:760px){ .projects-grid{ grid-template-columns:1fr; } }
+
+  .project-card{
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:26px 26px 24px;
+    display:flex; flex-direction:column; gap:14px;
+    transition:transform .2s, border-color .2s;
+  }
+  .project-card:hover{ transform:translateY(-3px); border-color:var(--blue-2); }
+  .project-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:14px; }
+  .project-top h3{ font-family:var(--font-display); font-size:18.5px; font-weight:600; }
+  .project-tag{
+    font-family:var(--font-mono); font-size:11px; color:var(--bg);
+    background:var(--yellow); padding:4px 9px; border-radius:5px; white-space:nowrap;
+  }
+  .project-card p.desc{ color:var(--muted); font-size:14.5px; flex:1; }
+  .stack{ display:flex; gap:7px; flex-wrap:wrap; }
+  .stack span{
+    font-family:var(--font-mono); font-size:11px; color:var(--blue-2);
+    border:1px solid var(--line); padding:4px 9px; border-radius:6px;
+  }
+  .project-link{
+    font-size:13.5px; font-weight:600; color:var(--white);
+    display:inline-flex; align-items:center; gap:6px;
+    border-top:1px solid var(--line); padding-top:14px; margin-top:4px;
+  }
+  .project-link:hover{ color:var(--yellow); }
+
+  /* placeholder de card vazio — modelo pronto para Alamir duplicar */
+  .project-card.placeholder{
+    border-style:dashed; align-items:center; justify-content:center;
+    text-align:center; color:var(--muted-2);
+  }
+  .project-card.placeholder .icon-plus{
+    width:30px; height:30px; margin-bottom:6px; opacity:.5;
+  }
+
+  /* ---------- sobre ---------- */
+  #sobre{ background:var(--bg-alt); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .about-grid{
+    display:grid; grid-template-columns:.85fr 1.15fr; gap:56px; align-items:start;
+  }
+  @media (max-width:860px){ .about-grid{ grid-template-columns:1fr; } }
+  .about-grid h2{ font-family:var(--font-display); font-size:clamp(26px,3vw,34px); font-weight:700; margin:14px 0 18px; }
+  .about-grid p{ color:var(--muted); margin-bottom:14px; font-size:15.5px; }
+  .stat-row{ display:flex; gap:34px; margin-top:28px; flex-wrap:wrap; }
+  .stat b{ display:block; font-family:var(--font-display); font-size:30px; color:var(--yellow); }
+  .stat span{ font-family:var(--font-mono); font-size:12px; color:var(--muted); letter-spacing:.04em; }
+
+  .principles{ display:flex; flex-direction:column; gap:18px; }
+  .principle{ display:flex; gap:16px; align-items:flex-start; }
+  .principle .num{ font-family:var(--font-mono); font-size:13px; color:var(--yellow); padding-top:3px; }
+  .principle h4{ font-family:var(--font-display); font-size:16px; font-weight:600; margin-bottom:4px; }
+  .principle p{ color:var(--muted); font-size:14.5px; margin:0; }
+
+  /* ---------- contato ---------- */
+  .contact-box{
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:52px;
+    display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center;
+    position:relative; overflow:hidden;
+  }
+  .contact-box::after{
+    content:""; position:absolute; right:-60px; top:-60px; width:220px; height:220px; border-radius:50%;
+    background:radial-gradient(circle, rgba(255,212,59,.12), transparent 70%);
+  }
+  @media (max-width:760px){ .contact-box{ grid-template-columns:1fr; padding:36px 26px; } }
+  .contact-box h2{ font-family:var(--font-display); font-size:clamp(24px,3vw,32px); font-weight:700; margin-bottom:12px; }
+  .contact-box p{ color:var(--muted); font-size:15.5px; }
+  .contact-list{ display:flex; flex-direction:column; gap:16px; }
+  .contact-item{ display:flex; align-items:center; gap:13px; font-size:15px; }
+  .contact-item .ci-icon{
+    width:38px; height:38px; border-radius:50%; border:1px solid var(--blue-2);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .contact-item .ci-icon svg{ width:17px; height:17px; }
+  .contact-item a:hover{ color:var(--yellow); }
+
+  /* ---------- footer ---------- */
+  footer{ border-top:1px solid var(--line); padding:30px 0; }
+  .footer-row{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
+  .footer-row p{ font-size:13px; color:var(--muted-2); }
+  .footer-brand{ display:flex; align-items:center; gap:8px; font-family:var(--font-mono); font-size:13px; color:var(--muted); }
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="nav-brand"><span>A</span>Rodrigues</div>
-  <div class="nav-right">
-    <ul class="nav-links">
-      <li><a href="#projects" data-i18n="nav.projects">Projetos</a></li>
-      <li><a href="#skills" data-i18n="nav.skills">Habilidades</a></li>
-      <li><a href="#about" data-i18n="nav.about">Sobre</a></li>
-      <li><a href="#contact" data-i18n="nav.contact">Contato</a></li>
-    </ul>
-    <div class="lang-switcher">
-      <button class="lang-btn active" onclick="setLang('pt')">PT</button>
-      <button class="lang-btn" onclick="setLang('en')">EN</button>
+<!-- ============== HEADER ============== -->
+<header>
+  <nav class="nav">
+    <a href="#topo" class="brand">
+      <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+        <path d="M24 4c-8 0-9 3.6-9 7.2v4.4h9v1.6H9.6C5 17.2 4 21 4 24s1 6.8 5.6 6.8h3.6v-4.6c0-5.2 4.5-9.4 10-9.4h7.6c4 0 7.2-3.3 7.2-7.3V11C38 7.4 33.2 4 24 4z" fill="var(--blue-2)"/>
+        <path d="M24 44c8 0 9-3.6 9-7.2v-4.4h-9v-1.6h14.4C42.9 30.8 44 27 44 24s-1-6.8-5.6-6.8h-3.6v4.6c0 5.2-4.5 9.4-10 9.4h-7.6c-4 0-7.2 3.3-7.2 7.3V37c0 3.6 4.8 7 14 7z" fill="var(--yellow)"/>
+      </svg>
+      PYTH<span class="o">O</span>S
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#servicos">Serviços</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato" class="nav-cta">Falar agora</a>
     </div>
-  </div>
-</nav>
+  </nav>
+</header>
 
-<section id="hero">
-  <div class="hero-inner">
-    <div class="hero-badge" data-i18n="hero.badge">Disponível para novos projetos</div>
-    <h1 class="hero-title">Alamir Rodrigues<br><span class="accent">Rangel Júnior</span></h1>
-    <p class="hero-sub" data-i18n="hero.sub">Desenvolvedor de sistemas web internos com foco em gestão educacional. Transformo processos burocráticos em ferramentas digitais eficientes — do levantamento de requisitos até a entrega final em produção.</p>
-    <div class="hero-ctas">
-      <a href="https://alamirjr.github.io/portfolio-alamir/" class="btn-primary" target="_blank" data-i18n="hero.cta1">Ver Portfólio Completo</a>
-      <button class="btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" data-i18n="hero.cta2">Entrar em contato</button>
+<!-- ============== HERO ============== -->
+<section class="hero" id="topo">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">&lt; software house <span class="accent">python</span> &gt;</p>
+      <h1>Codamos soluções.<br>Entregamos val<span class="o">o</span>r.</h1>
+      <!-- EDITAR: ajuste esse parágrafo para o seu posicionamento -->
+      <p class="lede">Desenvolvimento sob medida em Python: automação de processos, sistemas administrativos, dashboards e ferramentas com IA — entregues como soluções enxutas, rápidas e sem complicação.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5522997932424" target="_blank" rel="noopener" class="btn btn-primary">Conversar no WhatsApp</a>
+        <a href="#projetos" class="btn btn-ghost">Ver projetos</a>
+      </div>
     </div>
-    <div class="stats-row">
-      <div><div class="stat-value">3</div><div class="stat-label" data-i18n="stats.systems">Sistemas entregues</div></div>
-      <div><div class="stat-value">683</div><div class="stat-label" data-i18n="stats.professionals">Profissionais gerenciados</div></div>
-      <div><div class="stat-value">223</div><div class="stat-label" data-i18n="stats.schools">Escolas mapeadas</div></div>
-      <div><div class="stat-value">100%</div><div class="stat-label" data-i18n="stats.vanilla">Vanilla JS · Zero dependências pagas</div></div>
+
+    <div class="terminal" aria-hidden="true">
+      <div class="terminal-bar">
+        <span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span>
+        <span>pythos.py</span>
+      </div>
+      <div class="terminal-body">
+<span id="typed-line"></span><span class="cursor"></span>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="projects">
-  <div class="container">
-    <div class="section-label" data-i18n="projects.label">Portfólio</div>
-    <h2 class="section-title" data-i18n="projects.title">Sistemas desenvolvidos</h2>
-    <p class="section-desc" data-i18n="projects.desc">Três sistemas web completos, desenvolvidos do zero para a Gerência de Educação Especial da Secretaria Municipal de Educação de Campos dos Goytacazes — RJ.</p>
-    <div class="projects-grid">
+<!-- ============== SERVIÇOS ============== -->
+<section id="servicos">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">o que eu faço</p>
+      <h2>Soluções sob medida, do código à entrega</h2>
+      <p>Cada projeto nasce de um problema real — e termina numa ferramenta simples de usar.</p>
+    </div>
 
-      <!-- SIEE -->
-      <div class="project-card green">
-        <div class="card-top">
-          <div>
-            <div class="card-number">01 / 03</div>
-            <div class="card-icon">📚</div>
-            <h3 class="card-title">SIEE</h3>
-            <div class="card-subtitle" data-i18n="siee.subtitle">Sistema de Informação da Educação Especial</div>
-          </div>
-          <div class="card-status" data-i18n="status.live">Em produção</div>
-        </div>
-        <div class="card-body">
-          <p class="card-desc" data-i18n="siee.desc">Plataforma centralizada para registro e gestão de alunos com necessidades educacionais especiais (NEE). Cada unidade escolar registra seus próprios alunos via perfil de acesso dedicado, enquanto a administração central visualiza, edita e exporta toda a base consolidada.</p>
-          <div class="card-features">
-            <div class="feature-item" data-i18n="siee.f1">Autenticação por perfil (admin / escola)</div>
-            <div class="feature-item" data-i18n="siee.f2">Formulário com 18 campos estruturados</div>
-            <div class="feature-item" data-i18n="siee.f3">Busca em tempo real com highlight</div>
-            <div class="feature-item" data-i18n="siee.f4">Paginação configurável (20–100 / pág.)</div>
-            <div class="feature-item" data-i18n="siee.f5">Exportação XLSX com formatação profissional</div>
-            <div class="feature-item" data-i18n="siee.f6">Importação de planilhas legadas</div>
-            <div class="feature-item" data-i18n="siee.f7">Persistência em nuvem via JSONBin.io</div>
-            <div class="feature-item" data-i18n="siee.f8">Edição inline de qualquer registro</div>
-            <div class="feature-item" data-i18n="siee.f9">Bloqueio contextual por situação do aluno</div>
-            <div class="feature-item" data-i18n="siee.f10">Suporte a 223 unidades escolares</div>
-          </div>
-        </div>
-        <div class="card-metrics">
-          <div><div class="metric-value">223</div><div class="metric-label" data-i18n="siee.m1">Escolas suportadas</div></div>
-          <div><div class="metric-value">18</div><div class="metric-label" data-i18n="siee.m2">Campos por registro</div></div>
-          <div><div class="metric-value">1</div><div class="metric-label" data-i18n="siee.m3">Arquivo único (HTML)</div></div>
-        </div>
-        <div class="card-stack">
-          <span class="tech-tag hl-green">HTML5</span><span class="tech-tag hl-green">JavaScript ES6</span><span class="tech-tag hl-green">CSS3</span><span class="tech-tag">XLSX.js</span><span class="tech-tag">ExcelJS</span><span class="tech-tag">JSONBin.io API</span><span class="tech-tag">Single-file SPA</span>
-        </div>
+    <div class="services-grid">
+      <div class="service">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--blue-2)" stroke-width="1.6"><path d="M4 4h16v16H4z" stroke-opacity="0"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>
+        <h3>Automação de processos</h3>
+        <p>Planilhas, relatórios e tarefas repetitivas transformadas em scripts e apps que rodam sozinhos.</p>
       </div>
-
-      <!-- RH -->
-      <div class="project-card blue">
-        <div class="card-top">
-          <div>
-            <div class="card-number">02 / 03</div>
-            <div class="card-icon">👥</div>
-            <h3 class="card-title" data-i18n="rh.title">RH · Educação Especial</h3>
-            <div class="card-subtitle" data-i18n="rh.subtitle">Sistema de Gestão de Recursos Humanos</div>
-          </div>
-          <div class="card-status" data-i18n="status.live">Em produção</div>
-        </div>
-        <div class="card-body">
-          <p class="card-desc" data-i18n="rh.desc">Solução completa de RH para gestão das mediadoras e cuidadoras escolares. Inclui módulos de cadastro de profissionais, controle de alocações por aluno/escola, registro de frequência diária em massa e geração de relatórios exportáveis — com sincronização automática em nuvem via arquitetura 3-bins.</p>
-          <div class="card-features">
-            <div class="feature-item" data-i18n="rh.f1">Dashboard com indicadores em tempo real</div>
-            <div class="feature-item" data-i18n="rh.f2">Cadastro completo de profissionais</div>
-            <div class="feature-item" data-i18n="rh.f3">Controle de alocações por estudante e escola</div>
-            <div class="feature-item" data-i18n="rh.f4">Registro de frequência em massa</div>
-            <div class="feature-item" data-i18n="rh.f5">Alertas de contratos a vencer (30 dias)</div>
-            <div class="feature-item" data-i18n="rh.f6">Relatórios exportáveis por escola / disponíveis</div>
-            <div class="feature-item" data-i18n="rh.f7">Importação e exportação de planilha completa</div>
-            <div class="feature-item" data-i18n="rh.f8">Arquitetura 3-bins (respeita limites de API)</div>
-            <div class="feature-item" data-i18n="rh.f9">Sidebar com navegação entre 5 módulos</div>
-            <div class="feature-item" data-i18n="rh.f10">Logs de auditoria automáticos</div>
-          </div>
-        </div>
-        <div class="card-metrics">
-          <div><div class="metric-value">683</div><div class="metric-label" data-i18n="rh.m1">Profissionais gerenciados</div></div>
-          <div><div class="metric-value">5</div><div class="metric-label" data-i18n="rh.m2">Módulos funcionais</div></div>
-          <div><div class="metric-value">3</div><div class="metric-label" data-i18n="rh.m3">Bins de dados separados</div></div>
-        </div>
-        <div class="card-stack">
-          <span class="tech-tag hl-blue">HTML5</span><span class="tech-tag hl-blue">JavaScript ES6</span><span class="tech-tag hl-blue">CSS3</span><span class="tech-tag">XLSX.js</span><span class="tech-tag">JSONBin.io API</span><span class="tech-tag">GitHub Pages</span><span class="tech-tag">REST API</span>
-        </div>
+      <div class="service">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 9h16M9 9v11"/></svg>
+        <h3>Sistemas administrativos</h3>
+        <p>Cadastro, controle e geração de documentos — interfaces simples para times que não querem perder tempo.</p>
       </div>
-
-      <!-- GEE-Func -->
-      <div class="project-card purple">
-        <div class="card-top">
-          <div>
-            <div class="card-number">03 / 03</div>
-            <div class="card-icon">🏛️</div>
-            <h3 class="card-title">GEE-Func</h3>
-            <div class="card-subtitle" data-i18n="gee.subtitle">Gestão de Funcionários — Gerência de Educação Especial</div>
-          </div>
-          <div class="card-status" data-i18n="status.live">Em produção</div>
-        </div>
-        <div class="card-body">
-          <p class="card-desc" data-i18n="gee.desc">Sistema administrativo offline-first para gestão dos funcionários internos da GEE. Destaca-se pelo suporte a fotos com compressão automática via Canvas API, autenticação com hash SHA-256, geração de PDF profissional para impressão de fichas individuais e envio de dados via WhatsApp.</p>
-          <div class="card-features">
-            <div class="feature-item" data-i18n="gee.f1">Login com hash SHA-256 (Web Crypto API)</div>
-            <div class="feature-item" data-i18n="gee.f2">Upload e compressão automática de fotos</div>
-            <div class="feature-item" data-i18n="gee.f3">Geração de PDF por funcionário (A4)</div>
-            <div class="feature-item" data-i18n="gee.f4">Relatório PDF consolidado da equipe</div>
-            <div class="feature-item" data-i18n="gee.f5">Envio de ficha por WhatsApp (deep link)</div>
-            <div class="feature-item" data-i18n="gee.f6">Exportação XLSX avançada (ExcelJS)</div>
-            <div class="feature-item" data-i18n="gee.f7">Importação inteligente de planilhas legadas</div>
-            <div class="feature-item" data-i18n="gee.f8">Detecção de pendências de cadastro</div>
-            <div class="feature-item" data-i18n="gee.f9">Backup e restore completo (JSON + fotos)</div>
-            <div class="feature-item" data-i18n="gee.f10">Controle de permutas e municípios de origem</div>
-          </div>
-        </div>
-        <div class="card-metrics">
-          <div><div class="metric-value" data-i18n="gee.mv1">R$ 0</div><div class="metric-label" data-i18n="gee.m1">Custo de infraestrutura</div></div>
-          <div><div class="metric-value">SHA-256</div><div class="metric-label" data-i18n="gee.m2">Autenticação segura</div></div>
-          <div><div class="metric-value">A4</div><div class="metric-label" data-i18n="gee.m3">PDF para impressão</div></div>
-        </div>
-        <div class="card-stack">
-          <span class="tech-tag hl-purple">HTML5</span><span class="tech-tag hl-purple">JavaScript ES6</span><span class="tech-tag hl-purple">Web Crypto API</span><span class="tech-tag">ExcelJS</span><span class="tech-tag">Canvas API</span><span class="tech-tag">localStorage</span><span class="tech-tag">CSS Print Media</span><span class="tech-tag">GitHub Pages</span>
-        </div>
+      <div class="service">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--blue-2)" stroke-width="1.6"><path d="M12 3l7 4v10l-7 4-7-4V7z"/><path d="M12 12v9M5 7l7 5 7-5"/></svg>
+        <h3>Ferramentas com IA</h3>
+        <p>Integrações com modelos de linguagem para resumir, organizar e gerar conteúdo automaticamente.</p>
       </div>
-
+      <div class="service">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="1.6"><path d="M4 19V9M11 19V5M18 19v-7"/></svg>
+        <h3>Dashboards e relatórios</h3>
+        <p>Dados convertidos em painéis claros, exportáveis em Excel, PDF ou direto na tela.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="skills">
-  <div class="container">
-    <div class="section-label" data-i18n="skills.label">Habilidades</div>
-    <h2 class="section-title" data-i18n="skills.title">Stack e competências</h2>
-    <p class="section-desc" data-i18n="skills.desc">Especializado em desenvolvimento web front-end com foco em aplicações funcionais, sem dependências pesadas ou infraestrutura cara.</p>
-    <div class="skills-grid">
-      <div class="skill-card"><div class="skill-icon">🏗️</div><div class="skill-name" data-i18n="sk1.name">Arquitetura Single-File</div><div class="skill-desc" data-i18n="sk1.desc">Domínio de SPAs em arquivo único (HTML + CSS + JS), facilitando distribuição, hospedagem e manutenção sem build tools ou servidores próprios.</div></div>
-      <div class="skill-card"><div class="skill-icon">📊</div><div class="skill-name" data-i18n="sk2.name">Integração com APIs REST</div><div class="skill-desc" data-i18n="sk2.desc">Consumo de APIs externas com fetch nativo, tratamento de erros e persistência em nuvem sem back-end próprio (JSONBin.io, GitHub API).</div></div>
-      <div class="skill-card"><div class="skill-icon">📄</div><div class="skill-name" data-i18n="sk3.name">Manipulação de Planilhas</div><div class="skill-desc" data-i18n="sk3.desc">Exportação e importação de XLSX com XLSX.js e ExcelJS, incluindo formatação avançada, validações de dados e múltiplas abas.</div></div>
-      <div class="skill-card"><div class="skill-icon">🔒</div><div class="skill-name" data-i18n="sk4.name">Autenticação e Controle de Acesso</div><div class="skill-desc" data-i18n="sk4.desc">Sistemas de login com hash SHA-256 via Web Crypto API, controle por perfis e restrições contextuais de interface.</div></div>
-      <div class="skill-card"><div class="skill-icon">🖨️</div><div class="skill-name" data-i18n="sk5.name">Geração de PDF e Impressão</div><div class="skill-desc" data-i18n="sk5.desc">Relatórios prontos para impressão com CSS Print Media, incluindo fichas individuais e relatórios consolidados em A4.</div></div>
-      <div class="skill-card"><div class="skill-icon">🎨</div><div class="skill-name" data-i18n="sk6.name">UI / UX sem frameworks</div><div class="skill-desc" data-i18n="sk6.desc">Design de interfaces profissionais com CSS puro — variáveis, grid, animações, responsividade — sem Bootstrap, Tailwind ou similares.</div></div>
-      <div class="skill-card"><div class="skill-icon">🗃️</div><div class="skill-name" data-i18n="sk7.name">Persistência Local e Nuvem</div><div class="skill-desc" data-i18n="sk7.desc">Estratégias offline-first com localStorage e backup/restore em JSON incluindo fotos em base64 comprimidas via Canvas API.</div></div>
-      <div class="skill-card"><div class="skill-icon">🐍</div><div class="skill-name" data-i18n="sk8.name">Python — Nível Intermediário</div><div class="skill-desc" data-i18n="sk8.desc">Scripts de automação, manipulação de dados e utilitários de linha de comando para suporte a processos de gestão.</div></div>
-      <div class="skill-card"><div class="skill-icon">📋</div><div class="skill-name" data-i18n="sk9.name">Levantamento de Requisitos</div><div class="skill-desc" data-i18n="sk9.desc">Ciclo completo: elicitação com usuários não-técnicos, prototipação iterativa e entrega de sistemas prontos para uso imediato.</div></div>
+<!-- ============== PROJETOS / FERRAMENTAS ============== -->
+<section id="projetos">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">portfólio</p>
+      <h2>Ferramentas que já saíram do papel</h2>
+      <p>Uma seleção de projetos — cada card pode ser editado ou duplicado para adicionar novos.</p>
+    </div>
+
+    <div class="filter-row" id="filterRow">
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="automacao">Automação</button>
+      <button class="filter-btn" data-filter="gestao">Gestão</button>
+      <button class="filter-btn" data-filter="educacao">Educação</button>
+      <button class="filter-btn" data-filter="ia">IA</button>
+    </div>
+
+    <!-- ============ INÍCIO DOS CARDS DE PROJETO ============
+         Para adicionar um novo projeto: copie um <article class="project-card">
+         inteiro, cole antes do card "placeholder" no final, e troque os
+         textos, a tag de categoria (data-cat) e a lista de tecnologias. -->
+    <div class="projects-grid" id="projectsGrid">
+
+      <article class="project-card" data-cat="gestao">
+        <div class="project-top">
+          <h3>Sistema de Gestão Administrativa</h3>
+          <span class="project-tag">Gestão</span>
+        </div>
+        <p class="desc">Cadastro de equipe, controle de frequência e geração automática de fichas e relatórios — tudo num único arquivo, sem servidor e sem complicação.</p>
+        <div class="stack"><span>Python</span><span>JavaScript</span><span>JSONBin</span><span>ExcelJS</span></div>
+        <a href="#contato" class="project-link">Quero algo parecido →</a>
+      </article>
+
+      <article class="project-card" data-cat="educacao">
+        <div class="project-top">
+          <h3>Plataforma de Apoio Pedagógico</h3>
+          <span class="project-tag">Educação</span>
+        </div>
+        <p class="desc">Conjunto de mini-aplicativos acessíveis para apoiar rotinas e aprendizagem, reunidos em um único portal offline.</p>
+        <div class="stack"><span>HTML</span><span>CSS</span><span>Acessibilidade</span></div>
+        <a href="#contato" class="project-link">Quero algo parecido →</a>
+      </article>
+
+      <article class="project-card" data-cat="ia">
+        <div class="project-top">
+          <h3>Resumo Inteligente de Documentos</h3>
+          <span class="project-tag">IA</span>
+        </div>
+        <p class="desc">Upload de um PDF, extração automática do conteúdo e resumo gerado por IA, formatado e pronto para impressão.</p>
+        <div class="stack"><span>Python</span><span>PDF.js</span><span>API Claude</span></div>
+        <a href="#contato" class="project-link">Quero algo parecido →</a>
+      </article>
+
+      <article class="project-card" data-cat="automacao">
+        <div class="project-top">
+          <h3>Controle de Planilhas e Exportações</h3>
+          <span class="project-tag">Automação</span>
+        </div>
+        <p class="desc">Importação e exportação de planilhas com poucos cliques, cálculo automático de prazos e geração de documentos oficiais.</p>
+        <div class="stack"><span>Python</span><span>SheetJS</span><span>OpenPyXL</span></div>
+        <a href="#contato" class="project-link">Quero algo parecido →</a>
+      </article>
+
+      <!-- card-modelo: duplique este e edite para criar um novo projeto -->
+      <article class="project-card placeholder" data-cat="all" aria-hidden="true">
+        <svg class="icon-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 5v14M5 12h14"/></svg>
+        <p>Seu próximo projeto aqui</p>
+      </article>
+
+    </div>
+    <!-- ============ FIM DOS CARDS DE PROJETO ============ -->
+  </div>
+</section>
+
+<!-- ============== SOBRE ============== -->
+<section id="sobre">
+  <div class="wrap about-grid">
+    <div>
+      <p class="eyebrow">quem está do outro lado do código</p>
+      <!-- EDITAR: personalize esse texto sobre você -->
+      <h2>Python no dia a dia, soluções na prática</h2>
+      <p>Desenvolvedor focado em transformar processos manuais e burocráticos em ferramentas simples, rápidas e que realmente são usadas no dia a dia.</p>
+      <p>Trabalho com arquitetura enxuta — aplicações que rodam num único arquivo, sem depender de servidores complexos — e com integrações de inteligência artificial para automatizar tarefas que antes tomavam horas.</p>
+      <div class="stat-row">
+        <div class="stat"><b>9+</b><span>FERRAMENTAS ENTREGUES</span></div>
+        <div class="stat"><b>100%</b><span>PYTHON &amp; JS</span></div>
+        <div class="stat"><b>1</b><span>ARQUIVO POR PROJETO</span></div>
+      </div>
+    </div>
+
+    <div class="principles">
+      <div class="principle">
+        <span class="num">01</span>
+        <div><h4>Simples por dentro, simples por fora</h4><p>Interfaces que qualquer pessoa usa sem manual de instruções.</p></div>
+      </div>
+      <div class="principle">
+        <span class="num">02</span>
+        <div><h4>Funciona offline quando precisa</h4><p>Ferramentas pensadas para ambientes com internet instável.</p></div>
+      </div>
+      <div class="principle">
+        <span class="num">03</span>
+        <div><h4>Entrega rápida, ajustes ágeis</h4><p>Ciclos curtos de feedback — você testa, eu corrijo, e seguimos.</p></div>
+      </div>
+      <div class="principle">
+        <span class="num">04</span>
+        <div><h4>Código que se sustenta</h4><p>Soluções pensadas para durar, não só para funcionar uma vez.</p></div>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="about">
-  <div class="container">
-    <div class="about-grid">
+<!-- ============== CONTATO ============== -->
+<section id="contato">
+  <div class="wrap">
+    <div class="contact-box">
       <div>
-        <div class="section-label" data-i18n="about.label">Sobre</div>
-        <h2 class="section-title" data-i18n="about.title">Quem está por trás dos projetos</h2>
-        <p class="about-text" data-i18n="about.p1">Atuo na Gerência de Educação Especial da Secretaria Municipal de Educação de Campos dos Goytacazes — RJ, onde identifiquei a necessidade de substituir processos manuais em planilhas desconectadas por sistemas digitais integrados.</p>
-        <p class="about-text" data-i18n="about.p2">Desenvolvo soluções web completas — do levantamento de requisitos junto aos usuários finais até a entrega e suporte em produção — com foco em sistemas acessíveis, sem custo de infraestrutura e fáceis de usar por equipes não-técnicas.</p>
-        <p class="about-text" data-i18n="about.p3">Minha abordagem privilegia simplicidade técnica com resultado profissional: um único arquivo HTML ou uma página no GitHub Pages que resolve problemas reais de gestão pública.</p>
+        <p class="eyebrow">vamos conversar</p>
+        <h2>Tem um processo manual que merece ser automatizado?</h2>
+        <p>Conte o que você precisa — eu volto com um caminho prático e o tempo estimado para resolver.</p>
       </div>
-      <div class="about-right">
-        <div class="detail-item"><div class="detail-ico">🏛️</div><div><div class="detail-key" data-i18n="about.k1">Instituição</div><div class="detail-val" data-i18n="about.v1">Gerência de Educação Especial · SEMED</div></div></div>
-        <div class="detail-item"><div class="detail-ico">📍</div><div><div class="detail-key" data-i18n="about.k2">Localização</div><div class="detail-val" data-i18n="about.v2">Campos dos Goytacazes — RJ, Brasil</div></div></div>
-        <div class="detail-item"><div class="detail-ico">💻</div><div><div class="detail-key" data-i18n="about.k3">Especialidade</div><div class="detail-val" data-i18n="about.v3">Sistemas web internos · Gestão educacional</div></div></div>
-        <div class="detail-item"><div class="detail-ico">🐙</div><div><div class="detail-key">GitHub</div><div class="detail-val"><a href="https://github.com/AlamirJr/" target="_blank">github.com/AlamirJr</a></div></div></div>
-        <div class="detail-item"><div class="detail-ico">💼</div><div><div class="detail-key">LinkedIn</div><div class="detail-val"><a href="https://www.linkedin.com/in/alamir-rangel-140b2732a" target="_blank">linkedin.com/in/alamir-rangel</a></div></div></div>
-        <div class="detail-item"><div class="detail-ico">✉️</div><div><div class="detail-key">E-mail</div><div class="detail-val"><a href="mailto:alamirjr7@gmail.com">alamirjr7@gmail.com</a></div></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="container">
-    <div class="section-label" data-i18n="contact.label">Contato</div>
-    <div class="contact-card">
-      <div>
-        <h2 class="contact-title" data-i18n="contact.title">Vamos trabalhar juntos?</h2>
-        <p class="contact-sub" data-i18n="contact.sub">Tenho interesse em oportunidades de desenvolvimento de sistemas web internos, ferramentas de gestão e automação — especialmente voltadas ao setor público ou educacional.</p>
-        <div class="contact-links">
-          <a href="https://github.com/AlamirJr/" class="contact-link" target="_blank">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            GitHub
-          </a>
-          <a href="https://www.linkedin.com/in/alamir-rangel-140b2732a" class="contact-link" target="_blank">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-            LinkedIn
-          </a>
-          <a href="mailto:alamirjr7@gmail.com" class="contact-link">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            alamirjr7@gmail.com
-          </a>
-          <a href="https://alamirjr.github.io/portfolio-alamir/" class="contact-link" target="_blank">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            <span data-i18n="contact.portfolio">Ver portfólio</span>
-          </a>
+      <div class="contact-list">
+        <div class="contact-item">
+          <span class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-2)" stroke-width="1.8"><path d="M17 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM12 18h.01"/></svg></span>
+          <a href="tel:+5522997932424">(22) 99793-2424</a>
+        </div>
+        <div class="contact-item">
+          <span class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="1.8"><path d="M21 11.5a8.4 8.4 0 0 1-13 7L3 21l2.5-5a8.4 8.4 0 1 1 15.5-4.5z"/></svg></span>
+          <a href="https://wa.me/5522997932424" target="_blank" rel="noopener">WhatsApp direto</a>
+        </div>
+        <!-- EDITAR: adicione e-mail, GitHub ou Instagram se quiser -->
+        <div class="contact-item">
+          <span class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-2)" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></span>
+          <span style="color:var(--muted)">Campos dos Goytacazes, RJ</span>
         </div>
       </div>
-      <div class="contact-deco">{"}"}</div>
     </div>
   </div>
 </section>
 
+<!-- ============== FOOTER ============== -->
 <footer>
-  <span data-i18n="footer.text">© 2025 Alamir Rodrigues Rangel Júnior · Gerência de Educação Especial · SEMED · Campos dos Goytacazes — RJ</span>
+  <div class="wrap footer-row">
+    <div class="footer-brand">
+      <svg class="mark" viewBox="0 0 48 48" width="20" height="20" aria-hidden="true">
+        <path d="M24 4c-8 0-9 3.6-9 7.2v4.4h9v1.6H9.6C5 17.2 4 21 4 24s1 6.8 5.6 6.8h3.6v-4.6c0-5.2 4.5-9.4 10-9.4h7.6c4 0 7.2-3.3 7.2-7.3V11C38 7.4 33.2 4 24 4z" fill="var(--blue-2)"/>
+        <path d="M24 44c8 0 9-3.6 9-7.2v-4.4h-9v-1.6h14.4C42.9 30.8 44 27 44 24s-1-6.8-5.6-6.8h-3.6v4.6c0 5.2-4.5 9.4-10 9.4h-7.6c-4 0-7.2 3.3-7.2 7.3V37c0 3.6 4.8 7 14 7z" fill="var(--yellow)"/>
+      </svg>
+      PYTHOS Software House
+    </div>
+    <p>© <span id="year"></span> PYTHOS — Codamos soluções. Entregamos valor.</p>
+  </div>
 </footer>
 
 <script>
-const i18n = {
-  pt: {
-    'nav.projects': 'Projetos',
-    'nav.skills': 'Habilidades',
-    'nav.about': 'Sobre',
-    'nav.contact': 'Contato',
-    'hero.badge': 'Disponível para novos projetos',
-    'hero.sub': 'Desenvolvedor de sistemas web internos com foco em gestão educacional. Transformo processos burocráticos em ferramentas digitais eficientes — do levantamento de requisitos até a entrega final em produção.',
-    'hero.cta1': 'Ver Portfólio Completo',
-    'hero.cta2': 'Entrar em contato',
-    'stats.systems': 'Sistemas entregues',
-    'stats.professionals': 'Profissionais gerenciados',
-    'stats.schools': 'Escolas mapeadas',
-    'stats.vanilla': 'Vanilla JS · Zero dependências pagas',
-    'projects.label': 'Portfólio',
-    'projects.title': 'Sistemas desenvolvidos',
-    'projects.desc': 'Três sistemas web completos, desenvolvidos do zero para a Gerência de Educação Especial da Secretaria Municipal de Educação de Campos dos Goytacazes — RJ.',
-    'status.live': 'Em produção',
-    'siee.subtitle': 'Sistema de Informação da Educação Especial',
-    'siee.desc': 'Plataforma centralizada para registro e gestão de alunos com necessidades educacionais especiais (NEE). Cada unidade escolar registra seus próprios alunos via perfil de acesso dedicado, enquanto a administração central visualiza, edita e exporta toda a base consolidada.',
-    'siee.f1': 'Autenticação por perfil (admin / escola)',
-    'siee.f2': 'Formulário com 18 campos estruturados',
-    'siee.f3': 'Busca em tempo real com highlight',
-    'siee.f4': 'Paginação configurável (20–100 / pág.)',
-    'siee.f5': 'Exportação XLSX com formatação profissional',
-    'siee.f6': 'Importação de planilhas legadas',
-    'siee.f7': 'Persistência em nuvem via JSONBin.io',
-    'siee.f8': 'Edição inline de qualquer registro',
-    'siee.f9': 'Bloqueio contextual por situação do aluno',
-    'siee.f10': 'Suporte a 223 unidades escolares',
-    'siee.m1': 'Escolas suportadas',
-    'siee.m2': 'Campos por registro',
-    'siee.m3': 'Arquivo único (HTML)',
-    'rh.title': 'RH · Educação Especial',
-    'rh.subtitle': 'Sistema de Gestão de Recursos Humanos',
-    'rh.desc': 'Solução completa de RH para gestão das mediadoras e cuidadoras escolares. Inclui módulos de cadastro de profissionais, controle de alocações por aluno/escola, registro de frequência diária em massa e geração de relatórios exportáveis — com sincronização automática em nuvem via arquitetura 3-bins.',
-    'rh.f1': 'Dashboard com indicadores em tempo real',
-    'rh.f2': 'Cadastro completo de profissionais',
-    'rh.f3': 'Controle de alocações por estudante e escola',
-    'rh.f4': 'Registro de frequência em massa',
-    'rh.f5': 'Alertas de contratos a vencer (30 dias)',
-    'rh.f6': 'Relatórios exportáveis por escola / disponíveis',
-    'rh.f7': 'Importação e exportação de planilha completa',
-    'rh.f8': 'Arquitetura 3-bins (respeita limites de API)',
-    'rh.f9': 'Sidebar com navegação entre 5 módulos',
-    'rh.f10': 'Logs de auditoria automáticos',
-    'rh.m1': 'Profissionais gerenciados',
-    'rh.m2': 'Módulos funcionais',
-    'rh.m3': 'Bins de dados separados',
-    'gee.subtitle': 'Gestão de Funcionários — Gerência de Educação Especial',
-    'gee.desc': 'Sistema administrativo offline-first para gestão dos funcionários internos da GEE. Destaca-se pelo suporte a fotos com compressão automática via Canvas API, autenticação com hash SHA-256, geração de PDF profissional para impressão de fichas individuais e envio de dados via WhatsApp.',
-    'gee.f1': 'Login com hash SHA-256 (Web Crypto API)',
-    'gee.f2': 'Upload e compressão automática de fotos',
-    'gee.f3': 'Geração de PDF por funcionário (A4)',
-    'gee.f4': 'Relatório PDF consolidado da equipe',
-    'gee.f5': 'Envio de ficha por WhatsApp (deep link)',
-    'gee.f6': 'Exportação XLSX avançada (ExcelJS)',
-    'gee.f7': 'Importação inteligente de planilhas legadas',
-    'gee.f8': 'Detecção de pendências de cadastro',
-    'gee.f9': 'Backup e restore completo (JSON + fotos)',
-    'gee.f10': 'Controle de permutas e municípios de origem',
-    'gee.mv1': 'R$ 0',
-    'gee.m1': 'Custo de infraestrutura',
-    'gee.m2': 'Autenticação segura',
-    'gee.m3': 'PDF para impressão',
-    'skills.label': 'Habilidades',
-    'skills.title': 'Stack e competências',
-    'skills.desc': 'Especializado em desenvolvimento web front-end com foco em aplicações funcionais, sem dependências pesadas ou infraestrutura cara.',
-    'sk1.name': 'Arquitetura Single-File',
-    'sk1.desc': 'Domínio de SPAs em arquivo único (HTML + CSS + JS), facilitando distribuição, hospedagem e manutenção sem build tools ou servidores próprios.',
-    'sk2.name': 'Integração com APIs REST',
-    'sk2.desc': 'Consumo de APIs externas com fetch nativo, tratamento de erros e persistência em nuvem sem back-end próprio (JSONBin.io, GitHub API).',
-    'sk3.name': 'Manipulação de Planilhas',
-    'sk3.desc': 'Exportação e importação de XLSX com XLSX.js e ExcelJS, incluindo formatação avançada, validações de dados e múltiplas abas.',
-    'sk4.name': 'Autenticação e Controle de Acesso',
-    'sk4.desc': 'Sistemas de login com hash SHA-256 via Web Crypto API, controle por perfis e restrições contextuais de interface.',
-    'sk5.name': 'Geração de PDF e Impressão',
-    'sk5.desc': 'Relatórios prontos para impressão com CSS Print Media, incluindo fichas individuais e relatórios consolidados em A4.',
-    'sk6.name': 'UI / UX sem frameworks',
-    'sk6.desc': 'Design de interfaces profissionais com CSS puro — variáveis, grid, animações, responsividade — sem Bootstrap, Tailwind ou similares.',
-    'sk7.name': 'Persistência Local e Nuvem',
-    'sk7.desc': 'Estratégias offline-first com localStorage e backup/restore em JSON incluindo fotos em base64 comprimidas via Canvas API.',
-    'sk8.name': 'Python — Nível Intermediário',
-    'sk8.desc': 'Scripts de automação, manipulação de dados e utilitários de linha de comando para suporte a processos de gestão.',
-    'sk9.name': 'Levantamento de Requisitos',
-    'sk9.desc': 'Ciclo completo: elicitação com usuários não-técnicos, prototipação iterativa e entrega de sistemas prontos para uso imediato.',
-    'about.label': 'Sobre',
-    'about.title': 'Quem está por trás dos projetos',
-    'about.p1': 'Atuo na Gerência de Educação Especial da Secretaria Municipal de Educação de Campos dos Goytacazes — RJ, onde identifiquei a necessidade de substituir processos manuais em planilhas desconectadas por sistemas digitais integrados.',
-    'about.p2': 'Desenvolvo soluções web completas — do levantamento de requisitos junto aos usuários finais até a entrega e suporte em produção — com foco em sistemas acessíveis, sem custo de infraestrutura e fáceis de usar por equipes não-técnicas.',
-    'about.p3': 'Minha abordagem privilegia simplicidade técnica com resultado profissional: um único arquivo HTML ou uma página no GitHub Pages que resolve problemas reais de gestão pública.',
-    'about.k1': 'Instituição',
-    'about.v1': 'Gerência de Educação Especial · SEMED',
-    'about.k2': 'Localização',
-    'about.v2': 'Campos dos Goytacazes — RJ, Brasil',
-    'about.k3': 'Especialidade',
-    'about.v3': 'Sistemas web internos · Gestão educacional',
-    'contact.label': 'Contato',
-    'contact.title': 'Vamos trabalhar juntos?',
-    'contact.sub': 'Tenho interesse em oportunidades de desenvolvimento de sistemas web internos, ferramentas de gestão e automação — especialmente voltadas ao setor público ou educacional.',
-    'contact.portfolio': 'Ver portfólio',
-    'footer.text': '© 2025 Alamir Rodrigues Rangel Júnior · Gerência de Educação Especial · SEMED · Campos dos Goytacazes — RJ',
-  },
-  en: {
-    'nav.projects': 'Projects',
-    'nav.skills': 'Skills',
-    'nav.about': 'About',
-    'nav.contact': 'Contact',
-    'hero.badge': 'Available for new projects',
-    'hero.sub': 'Internal web systems developer focused on educational management. I turn bureaucratic processes into efficient digital tools — from requirements gathering all the way through to production delivery.',
-    'hero.cta1': 'View Full Portfolio',
-    'hero.cta2': 'Get in touch',
-    'stats.systems': 'Systems delivered',
-    'stats.professionals': 'Professionals managed',
-    'stats.schools': 'Schools mapped',
-    'stats.vanilla': 'Vanilla JS · Zero paid dependencies',
-    'projects.label': 'Portfolio',
-    'projects.title': 'Developed systems',
-    'projects.desc': 'Three complete web systems, built from scratch for the Special Education Management division of the Municipal Education Secretariat of Campos dos Goytacazes — RJ, Brazil.',
-    'status.live': 'Live in production',
-    'siee.subtitle': 'Special Education Information System',
-    'siee.desc': 'Centralized platform for registering and managing students with special educational needs (SEN). Each school logs its own students through a dedicated access profile, while the central administration views, edits, and exports the full consolidated database.',
-    'siee.f1': 'Role-based authentication (admin / school)',
-    'siee.f2': 'Structured form with 18 fields',
-    'siee.f3': 'Real-time search with highlight',
-    'siee.f4': 'Configurable pagination (20–100 / page)',
-    'siee.f5': 'XLSX export with professional formatting',
-    'siee.f6': 'Legacy spreadsheet import',
-    'siee.f7': 'Cloud persistence via JSONBin.io',
-    'siee.f8': 'Inline editing of any record',
-    'siee.f9': 'Context-aware locking by student status',
-    'siee.f10': 'Supports 223 school units',
-    'siee.m1': 'Schools supported',
-    'siee.m2': 'Fields per record',
-    'siee.m3': 'Single file (HTML)',
-    'rh.title': 'HR · Special Education',
-    'rh.subtitle': 'Human Resources Management System',
-    'rh.desc': 'Full HR solution for managing school mediators and caregivers. Includes modules for staff registration, allocation tracking per student/school, bulk daily attendance logging, and exportable report generation — with automatic cloud sync via a 3-bin architecture.',
-    'rh.f1': 'Dashboard with real-time indicators',
-    'rh.f2': 'Full staff registration',
-    'rh.f3': 'Allocation control per student and school',
-    'rh.f4': 'Bulk attendance recording',
-    'rh.f5': 'Contract expiry alerts (30 days)',
-    'rh.f6': 'Exportable reports by school / available staff',
-    'rh.f7': 'Full spreadsheet import and export',
-    'rh.f8': '3-bin architecture (API payload management)',
-    'rh.f9': 'Sidebar navigation across 5 modules',
-    'rh.f10': 'Automatic audit logs',
-    'rh.m1': 'Professionals managed',
-    'rh.m2': 'Functional modules',
-    'rh.m3': 'Separate data bins',
-    'gee.subtitle': 'Staff Management — Special Education Division',
-    'gee.desc': 'Offline-first administrative system for managing internal staff at the Special Education division. Key features include photo uploads with automatic Canvas API compression, SHA-256 hashed authentication, professional A4 PDF generation for individual staff records, and data sharing via WhatsApp deep link.',
-    'gee.f1': 'SHA-256 login (Web Crypto API)',
-    'gee.f2': 'Photo upload with automatic compression',
-    'gee.f3': 'Per-employee PDF generation (A4)',
-    'gee.f4': 'Consolidated team PDF report',
-    'gee.f5': 'Record sharing via WhatsApp deep link',
-    'gee.f6': 'Advanced XLSX export (ExcelJS)',
-    'gee.f7': 'Smart legacy spreadsheet import',
-    'gee.f8': 'Incomplete record detection',
-    'gee.f9': 'Full backup and restore (JSON + photos)',
-    'gee.f10': 'Transfer and home municipality tracking',
-    'gee.mv1': '$0',
-    'gee.m1': 'Infrastructure cost',
-    'gee.m2': 'Secure authentication',
-    'gee.m3': 'Print-ready PDF',
-    'skills.label': 'Skills',
-    'skills.title': 'Stack & competencies',
-    'skills.desc': 'Specialized in front-end web development with a focus on functional applications — no heavy dependencies, no expensive infrastructure.',
-    'sk1.name': 'Single-File Architecture',
-    'sk1.desc': 'Mastery of single-file SPAs (HTML + CSS + JS), making distribution, hosting, and maintenance straightforward — no build tools or dedicated servers required.',
-    'sk2.name': 'REST API Integration',
-    'sk2.desc': 'Consuming external APIs with native fetch, error handling, and cloud persistence without a custom back-end (JSONBin.io, GitHub API).',
-    'sk3.name': 'Spreadsheet Handling',
-    'sk3.desc': 'XLSX export and import with XLSX.js and ExcelJS, including advanced formatting, data validation, and multi-tab workbooks.',
-    'sk4.name': 'Authentication & Access Control',
-    'sk4.desc': 'Login systems with SHA-256 hashing via the Web Crypto API, role-based profiles, and context-aware UI restrictions.',
-    'sk5.name': 'PDF Generation & Printing',
-    'sk5.desc': 'Print-ready reports using CSS Print Media, including individual record sheets and consolidated A4 reports.',
-    'sk6.name': 'UI / UX without frameworks',
-    'sk6.desc': 'Professional interface design with pure CSS — variables, grid, animations, responsiveness — no Bootstrap, Tailwind, or similar libraries.',
-    'sk7.name': 'Local & Cloud Persistence',
-    'sk7.desc': 'Offline-first strategies with localStorage and JSON backup/restore, including base64-compressed photos via the Canvas API.',
-    'sk8.name': 'Python — Intermediate Level',
-    'sk8.desc': 'Automation scripts, data manipulation, and command-line utilities to support management workflows and data pipelines.',
-    'sk9.name': 'Requirements Gathering',
-    'sk9.desc': 'Full cycle: elicitation with non-technical users, iterative prototyping, and delivery of ready-to-use systems.',
-    'about.label': 'About',
-    'about.title': 'The person behind the projects',
-    'about.p1': 'I work at the Special Education Management division of the Municipal Education Secretariat of Campos dos Goytacazes — RJ, Brazil, where I identified the need to replace manual, disconnected spreadsheet workflows with integrated digital systems.',
-    'about.p2': 'I develop complete web solutions — from requirements gathering with end users to production delivery and ongoing support — with a focus on accessible, zero-infrastructure-cost tools that non-technical teams can use with ease.',
-    'about.p3': 'My approach values technical simplicity with professional results: a single HTML file or a GitHub Pages deployment that solves real public management problems.',
-    'about.k1': 'Institution',
-    'about.v1': 'Special Education Division · SEMED',
-    'about.k2': 'Location',
-    'about.v2': 'Campos dos Goytacazes — RJ, Brazil',
-    'about.k3': 'Specialty',
-    'about.v3': 'Internal web systems · Educational management',
-    'contact.label': 'Contact',
-    'contact.title': "Let's work together?",
-    'contact.sub': "I'm open to opportunities in internal web system development, management tooling, and automation — especially within the public sector or education space.",
-    'contact.portfolio': 'View portfolio',
-    'footer.text': '© 2025 Alamir Rodrigues Rangel Júnior · Special Education Division · SEMED · Campos dos Goytacazes — RJ, Brazil',
+  // menu mobile
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', false);
+  }));
+
+  // ano automático no footer
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // esconde o cabeçalho ao rolar para baixo, mostra ao rolar para cima
+  // (apenas tem efeito visual no celular, via CSS acima)
+  (function(){
+    const header = document.querySelector('header');
+    let lastY = window.scrollY;
+    let ticking = false;
+    const THRESHOLD = 8; // ignora pequenas variações de scroll
+
+    function onScroll(){
+      const y = window.scrollY;
+      const delta = y - lastY;
+
+      // nunca esconde se o menu mobile estiver aberto, ou perto do topo
+      if (navLinks.classList.contains('open') || y < 60){
+        header.classList.remove('header-hidden');
+      } else if (Math.abs(delta) > THRESHOLD){
+        if (delta > 0){ header.classList.add('header-hidden'); }
+        else { header.classList.remove('header-hidden'); }
+        lastY = y;
+      }
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!ticking){
+        requestAnimationFrame(onScroll);
+        ticking = true;
+      }
+    }, { passive: true });
+  })();
+
+  // filtro de projetos
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('#projectsGrid .project-card:not(.placeholder)');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      cards.forEach(c => {
+        c.style.display = (f === 'all' || c.dataset.cat === f) ? '' : 'none';
+      });
+    });
+  });
+
+  // efeito de "digitação" no terminal do hero
+  const lines = [
+    { text: '>>> from pythos import solucoes', cls: 'p1' },
+    { text: '>>> solucoes.entregar(valor=True)', cls: 'p1' },
+    { text: 'Sucesso. Processo automatizado em 0.4s', cls: 'out' },
+  ];
+  const target = document.getElementById('typed-line');
+  let li = 0, ci = 0, buffer = '';
+
+  function typeStep(){
+    if (li >= lines.length){ return; }
+    const line = lines[li];
+    if (ci <= line.text.length){
+      buffer = renderBuffer();
+      target.innerHTML = buffer + wrapLine(line.text.slice(0, ci), line.cls);
+      ci++;
+      setTimeout(typeStep, 26);
+    } else {
+      finishedLines.push(line);
+      li++; ci = 0;
+      setTimeout(typeStep, 280);
+    }
   }
-};
-
-let currentLang = 'pt';
-
-function setLang(lang) {
-  currentLang = lang;
-  document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
-  document.title = lang === 'pt'
-    ? 'Portfólio — Alamir Rodrigues Rangel Júnior'
-    : 'Portfolio — Alamir Rodrigues Rangel Júnior';
-
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (i18n[lang][key] !== undefined) el.textContent = i18n[lang][key];
-  });
-
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.textContent === lang.toUpperCase());
-  });
-}
+  const finishedLines = [];
+  function renderBuffer(){
+    return finishedLines.map(l => wrapLine(l.text, l.cls)).join('\n') + (finishedLines.length ? '\n' : '');
+  }
+  function wrapLine(text, cls){
+    return '<span class="' + cls + '">' + escapeHtml(text) + '</span>';
+  }
+  function escapeHtml(s){
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+  typeStep();
 </script>
 
 </body>
 </html>
-
